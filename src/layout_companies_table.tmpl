@@ -1,0 +1,21 @@
+<table style="border: 1px solid black; border-collapse: collapse;">
+    <thead>
+        <tr>
+            <th scope="col" colspan="5">{{ .TableTitle }}</th>
+        </tr>
+        <tr>
+        {{ range .Heads }}
+            <th scope="col" style="border: 1px solid black; border-collapse: collapse; {{ .Style }}">{{ .Text }}</th>
+        {{ end }}
+        </tr>
+    </thead>
+    <tbody>
+        {{ range .Rows }}
+        <tr>
+            {{ range . }}
+            <td style="border: 1px solid black; border-collapse: collapse; {{ .Style }} ">{{ .Text }}</td>
+            {{ end }}
+        </tr>
+        {{ end }}
+    </tbody>
+</table>
